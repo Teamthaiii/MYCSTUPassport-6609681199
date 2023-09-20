@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPLE HTML</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://kit.fontawesome.com/69e78b8dd9.js" crossorigin="anonymous"></script> <!--สำหรับ contact icon ต่างๆ!-->
+    
+    <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX Create by นายทีมไทย น้อยสุวรรณา [6609681199] XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+</head>
+<body>
+    <div class="container">
+        <video class="video_bg" src="VDO/FirstPageBG_reducesize.mp4" autoplay muted loop></video>
+        <nav class="navbar">
+            <ul>
+                <li>
+                    <a href="#home" class="dot" data-scroll="home">
+                        <span>home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about" class="dot" data-scroll="about">
+                        <span>about</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="dot" data-scroll="coming soon">
+                        <span>coming soon</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="dot" data-scroll="coming soon">
+                        <span>coming soon</span>
+                    </a>
+                </li>
+                
+            </ul>
+        </nav>
+
+        <section class="sec" id="home">
+            <h1><span>Hi</span></h1>
+        </section>
+
+        <section class="sec" id="about">
+           
+            <div class="about_row">
+
+                <!-- ---------------------------Contact start--------------------------- -->
+                <div class="about_col" id="about_contact">
+                    <ul>
+                        <li><a href="https://facebook.com/T.Teamthai.Noisuwanna"><i class="fa-brands fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/teamthai.i/"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://line.me/ti/p/HTLjaUMIyf"><i class="fa-brands fa-line"></i></a></li>
+                        <li><a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&to=teamthai101@gmail.com"><i class="fa-regular fa-envelope"></i></a></li>
+                    </ul>
+                </div>
+                <!-- ---------------------------Contact end--------------------------- -->
+
+                <!-- ---------------------------Picture slider start--------------------------- -->
+                <div class="about_col" id="about_picture">
+                    <div class="picture_slider" >
+                        <div class="slides">
+                            <!-- --------------------slider button start------------------- -->
+                            <input type="radio" name="radio-btn" id="radio1">
+                            <input type="radio" name="radio-btn" id="radio2">
+                            <input type="radio" name="radio-btn" id="radio3">
+                            <input type="radio" name="radio-btn" id="radio4">
+                            <!-- --------------------slider button end------------------- -->
+
+                            <!-- --------------------------slide image start----------------- -->
+                            <div class="slide first">
+                                <div class="img_container">
+                                    <img class="img1" src="IMG/About image slider/2.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="img_container">
+                                    <img class="img2" src="IMG/About image slider/1.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="img_container">
+                                    <img class="img3" src="IMG/About image slider/3.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="img_container video-container">
+                                    <video class="img4" src="VDO/introduce_reduce.mp4" autoplay controls muted loop controlsList="nofullscreen"></video>
+                                </div>
+                            </div>
+                            <!-- --------------------------slide image end----------------- -->
+
+                            <!-- ------------------------------manual slide start--------------------------- -->
+                            <div class="manual_slide">
+                                <label for="radio1" class="manual_btn"></label>
+                                <label for="radio2" class="manual_btn"></label>
+                                <label for="radio3" class="manual_btn"></label>
+                                <label for="radio4" class="manual_btn"><i class="fa-solid fa-play"></i></label>
+                            </div>
+                            <!-- ------------------------------manual slide end--------------------------- -->
+                        </div>
+                    </div>
+                </div>
+                <!-- ---------------------------Picture slider end--------------------------- -->
+
+                <!-- ---------------------------content start--------------------------- -->
+                <div class="about_col" id="about_content">
+                    <h1>ABOUT ME</h1>
+                    <p> <span>Hi. </span>I’m Teamthai Noisuwanna or call me Team.</p>
+                    <p> I’m CSTU38 same as you guys. I am from Roi-et and </p>
+                    <p> graduate from Roi-et wittayalai school. I like basketball </p>
+                    <p> and play games like Valorant , Overwatch 2 , Apex Legends , </p>
+                    <p> etc. I’m ready to be your good friend so there is my contact </p>
+                    <p> on the left side don’t forget to check it out. I hope we’ll be </p>
+                    <p> friends and pass this university life together without getting F. </p>
+                </div>
+                <!-- ---------------------------content end--------------------------- -->
+            </div>
+            <div class="quote"><p>Peace begins with smile :)</p></div>
+        </section>
+    </div>
+
+
+</body>
+</html>
