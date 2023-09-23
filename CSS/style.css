@@ -161,6 +161,24 @@ body {
     }
 }
 
+.arrow i {
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 94%;
+    left: 50%;
+    transform: rotate(90deg);
+    opacity: 0;
+    text-shadow: 0 0 20px rgb(83, 255, 255),
+                 0 0 20px rgb(155, 255, 255);
+    cursor: pointer;
+    animation: blinking 2.5s ease-in-out infinite alternate;
+}
+@keyframes blinking {
+    100%{
+        opacity: 1;
+    }
+}
 /*-----------------about --------------------*/
 #about {
     width: 100vw;
