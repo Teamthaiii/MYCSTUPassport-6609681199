@@ -163,7 +163,7 @@ body {
     }
 }
 
-/*-----------------about --------------------*/
+/*-----------------advisor --------------------*/
 #advisor {
     width: 100vw;
     height: 150vh;
@@ -248,10 +248,10 @@ body {
 
 /*------------------Advisor picture end---------------*/
 
-/*------------------about quote start----------------*/
+/*------------------advisor quote start----------------*/
 .quote {
     font-weight: 100;
     font-size: 30px;
     margin-bottom: 10px;
 }
-/*------------------about quote end----------------*/
+/*------------------advisor quote end----------------*/
