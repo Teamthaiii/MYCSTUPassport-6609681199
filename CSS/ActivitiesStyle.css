@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all .2s linear;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    
+    color: white;
+    max-height: 200vh;
+    overflow-x: hidden;
+}
+/*------------------------------ Nav bar (Start) -------------------------------------*/
+.navbar {
+    position: fixed;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    width: 200px;
+    position: relative;
+    text-align: right;
+}
+
+.navbar ul li .dot {
+    color: black;
+    display: block;
+    padding: 5px 0;
+}
+
+.navbar ul li .dot span {
+    display: inline-block;
+    background: white;
+    letter-spacing: 1px;
+    padding: 10px 25px;
+    margin-right: 30px;
+    border-radius: 30px;
+    transform: translateX(30px);
+    opacity: 0;
+}
+
+.navbar ul li:hover .dot span {
+    transform: translateX(0px);
+    opacity: 1;
+}
+
+.navbar ul li .dot span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(7px, -50%);
+    border-left: 7px solid white;
+    border-top: 7px solid transparent;
+    border-left: 7px solid transparent;
+    display: block;
+}
+
+.navbar ul li .dot::before ,
+.navbar ul li .dot::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    border-radius: 50%;
+    display: block;
+    transition: .2s ease-out;
+     pointer-events: none;
+}
+
+.navbar ul li:not(.active) .dot {
+    pointer-events: all;
+}
+
+.navbar ul li .dot::before{
+    height: 5px;
+    width: 5px;
+    /* background: #ffffff; */
+    border: 2px solid #ffffff;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.navbar ul li .dot.active::before ,
+.navbar ul li:hover .dot::before {
+    border-color: white;
+    background: white;
+}
+
+.navbar ul li .dot::after{
+    height: 15px;
+    width: 15px;
+    border: 2px solid white;
+    right: -5px;
+    transform: translateY(-50%) scale(0);
+}
+
+.navbar ul li .dot.active::after ,
+.navbar ul li:hover .dot::after {
+    transform: translateY(-50%) scale(1);
+}
+/*------------------------------ Nav bar (End) -------------------------------------*/
+
+/* ----------------------------Container start------------------------------------------ */
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.sec {
+    z-index: 100;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+#activities_title {
+    height: 50vh;
+}
+
+.container video {
+    z-index: 000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200vh;
+    object-fit: fill;
+}
+
+/* ----------------------------Container end------------------------------------------ */
+
+/* ------------------ Home Hi text --------------------- */
+#activities_title h1 {
+    font-size: 150px;
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    background-image: linear-gradient(white,white);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -800px;
+    animation: backcolor 6.5s linear infinite alternate;
+}
+
+@keyframes backcolor {
+    100% {
+        background-position: 10px 0;
+    }
+}
+
+/* ------------------- activities ------------------------- */
+#activities {
+    width: 100%;
+    height: 150vh;
+    /* border: 1px solid white; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.activities_bg {
+    position: absolute;
+    z-index: -999;
+    width: 98%;
+    height: 98%;
+    border-radius: 25px;
+    background: #232425;
+    opacity: 0.4;
+}
+
+.activities_row {
+    display: flex;
+    width: 95%;
+    align-items: center;
+    justify-content: space-evenly;
+    /* background: white; */
+    margin-top: 1.5%;
+}
+
+.activities_col {
+    width: 620px;
+    /* background: black; */
+    border-radius: 10px;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.activities_col h4 {
+    text-align: center;
+    font-size: 70px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    letter-spacing: normal;
+    cursor: pointer;
+}
+
+.activities_col h4:hover {
+    letter-spacing: 20px;
+    text-shadow: 0 0 30px rgba(209, 119, 35, 0.568);
+}
+
+.activities_col p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.activities_col img {
+    width: 50px;
+}
+
+/* ---------------- Orientation slider ---------------- */
+.picture_slider {
+    width: 600px;
+    height: auto;
+    /* background: rgba(255, 255, 255, 0.459); */
+    border-radius: 55px;
+    overflow: hidden;
+}
+
+.picture_slider:hover {
+    box-shadow: 0 0 30px rgba(209, 119, 35, 0.568);
+}
+
+.slides {
+    width: 100%;
+    height: 400px;
+    display: flex;
+}
+
+.slides input {
+    display: none;
+}
+
+.slide {
+    width: 100%;
+    transition: 2s;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.img_container {
+    /* background: #245578; */
+    width: 100%;
+    
+}
+
+.img_container img {
+    height: 100%;
+    width: auto;
+}
+
+/* +++++++++++++++++++++ Manual slide start++++++++++++++++++++ */
+ .manual_slide {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual_slide label {
+    position: relative;
+    top: 90%;
+}
+
+.manual_btn {
+    width: 15px;
+    height: 15px;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    box-shadow: 0 0 10px rgb(75, 64, 64);
+}
+
+.manual_btn:not(:last-child){
+    margin-right: 30px;
+}
+
+
+.manual_btn:hover {
+    background: #f44366;
+}
+
+
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -100%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -200%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -300%;
+}
+
+#radio5:checked ~ .first{
+    margin-left: -400%;
+}
+
+#radio6:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio7:checked ~ .first{
+    margin-left: -100%;
+}
+
+#radio8:checked ~ .first{
+    margin-left: -200%;
+}
+
+#radio9:checked ~ .first{
+    margin-left: -300%;
+}
+
+#radio10:checked ~ .first{
+    margin-left: -400%;
+}
+
+/* +++++++++++++++++++++ Manual slide end ++++++++++++++++++++ */
+
+.incoming {
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.incoming:hover {
+    color: red;
+    text-shadow: 0 0 20px red;
+}
+
+/*------------------about quote start----------------*/
+.quote {
+    font-weight: 100;
+    font-size: 30px;
+    margin-bottom: 50px;
+    color: white;
+}
+/*------------------about quote end----------------*/
