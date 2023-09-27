@@ -190,10 +190,11 @@ body {
     position: relative;
     display: flex;
     justify-content: center;
+    align-items: center;
     overflow: hidden;
     margin-bottom: 3%;
     width: 100vw;
-    height: 70vh;
+    height: 75vh;
 }
 
 .about_col {
@@ -236,12 +237,14 @@ body {
 
 #about_contact ul li i:hover {
     color: #f44366;
+    text-shadow: 0 0 10px #ff7994;
 }
 /*------------------about contact end---------------*/
 
 /*------------------about picture start---------------*/
 #about_picture {
     width: 25vw;
+    height: 70vh;
     position: absolute;
     left: 11%;
     justify-content: center;
@@ -254,6 +257,11 @@ body {
     background: rgba(255, 255, 255, 0.459);
     border-radius: 55px;
     overflow: hidden;
+}
+
+.picture_slider:hover {
+    box-shadow: 0 0 20px #89f1ff,
+                0 0 20px #32668E;
 }
 
 .slides {
