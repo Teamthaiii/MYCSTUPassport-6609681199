@@ -5,6 +5,8 @@
     font-family: 'Poppins', sans-serif;
     transition: all .2s linear;
 }
+
+/*--------------- Default Screen size 1920*1080 -------------*/
 html {
     scroll-behavior: smooth;
 }
@@ -15,6 +17,79 @@ body {
     max-height: 200vh;
     overflow-x: hidden;
 }
+
+/*------------------------------ Burger menu (start) ---------------------------------*/
+input {
+    z-index: 9999;
+    display: none;
+    visibility: hidden;
+    -webkit-appearance: none;
+}
+
+.toggle {
+    display: none;
+    position: fixed;
+    height: 30px;
+    width: 30px;
+    top: 15px;
+    right: 15px;
+    z-index: 999;
+    cursor: pointer;
+    border-radius: 2px;
+    /* background-color: red; */
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+}
+
+.toggle .common {
+    position: absolute;
+    height: 2px;
+    width: 20px;
+    background-color: white;
+    border-radius: 50px;
+    transition: 0.3s ease;
+}
+
+.toggle .top_line{
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.toggle .middle_line{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.toggle .bottom_line{
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+input:checked ~ .toggle .top_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(45deg);
+}
+
+input:checked ~ .toggle .bottom_line {
+    left: 2px;
+    top: 14px;
+    width: 25px;
+    transform: rotate(-45deg);
+}
+
+input:checked ~ .toggle .middle_line {
+    opacity: 0;
+}
+
+input:checked ~ .navbar {
+    transform: translateY(-50%) translateX(0);
+}
+/*------------------------------ Burger menu (end) ---------------------------------*/
+
 /*------------------------------ Nav bar (Start) -------------------------------------*/
 input {
     display: none;
@@ -81,7 +156,7 @@ input {
     border-radius: 50%;
     display: block;
     transition: .2s ease-out;
-     pointer-events: none;
+    pointer-events: none;
 }
 
 .navbar ul li:not(.active) .dot {
@@ -91,7 +166,6 @@ input {
 .navbar ul li .dot::before{
     height: 5px;
     width: 5px;
-    /* background: #ffffff; */
     border: 2px solid #ffffff;
     right: 0;
     transform: translateY(-50%);
@@ -197,7 +271,7 @@ input {
     overflow: hidden;
     margin-bottom: 3%;
     width: 100vw;
-    height: 75vh;
+    height: 100vh;
 }
 
 .about_col {
@@ -307,7 +381,7 @@ input {
 /* +++++++++++++++++++++ Manual slide start++++++++++++++++++++ */
 .manual_slide {
     position: absolute;
-    bottom: 6%;
+    bottom: -6%;
     left: 50%;
     transform: translateX(-50%);
     width: 35%;
@@ -372,7 +446,7 @@ input {
 #about_content {
     width: auto;
     position: absolute;
-    right: 8%;
+    right: 10%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -380,16 +454,16 @@ input {
 }
 
 #about_content h1{
-    font-size: 95px;
+    font-size: 90px;
     font-weight: 600;
     margin-bottom: -5px;
 }
 
 #about_content p{
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 300;
     letter-spacing: 1px;
-    line-height: 50px;
+    line-height: 60px;
 }
 
 #about_content p span{
@@ -400,85 +474,346 @@ input {
 
 /*------------------about quote start----------------*/
 .quote {
-    height: 300px;
-    padding-top: 250px;
+    height: auto;
+    padding-top: 0;
     font-weight: 100;
     font-size: 30px;
     position: absolute;
-    bottom: 2%;
+    bottom: 1%;
 }
 /*------------------about quote end----------------*/
 
-/*------------------Responsive-----------------------*/
-@media (max-width: 450px){
-    /* ----- Toggle nav menu ----- */
-    input {
-        z-index: 9999;
+/*-------------------------------Responsive Start-----------------------------------------*/
+
+/*--------------------------------Start Desktop------------------------------------------*/
+@media (min-width: 821px) and (max-width: 1358px){
+    /*--- Burger menu ----*/
+    .toggle{
         display: none;
-        visibility: hidden;
-        -webkit-appearance: none;
+        top: 30px;
+        right: 30px;
+    }
+    /*----- Nav bar -----*/
+    
+    .navbar {
+        transform: translateY(-50%);
+    }
+
+    .navbar ul li .dot {
+        display: 1;
+        
     }
     
-    .toggle {
-        position: fixed;
-        height: 30px;
-        width: 30px;
-        top: 15px;
-        right: 15px;
-        z-index: 999;
-        cursor: pointer;
-        border-radius: 2px;
-        /* background-color: red; */
-        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
+    .navbar ul li .dot span {
+        font-size: 80%;
+        padding: 8px 18px;
+    }
+
+    .navbar ul li:hover .dot span {
+        transform: translateX( 5px);
+    }
+
+    .navbar ul li .dot::before{
+        height: 5px;
+        width: 5px;
+        border: 2px solid #ffffff;
+    }
+
+    .navbar ul li .dot::after{
+        height: 15px;
+        width: 15px;
+        right: -5px;
+        border: 2px solid white;
+    }
+    /* ------- about --------- */
+    .about_row {
+        height: 100vh;
+    }
+
+    /* ------- about picture ----- */
+    .video-container video{
+        height: 101%;
+    }
+
+    /* ----- about contact ----- */
+    #about_contact {
+        line-height: 40px;
+    }
+
+    #about_contact ul li a{
+        font-size: 180%;
     }
     
+    #about_contact ul li .fa-instagram{
+        font-size: 110%;
+    }
+
+    #about_contact ul li .fa-envelope{
+        font-size: 100%;
+    }
+
+    /* ----- Manual slide ----- */
+    .manual_slide {
+        bottom: -7%;
+        width: 50%;
+    }
+
+    .manual_btn {
+        width: 12px;
+        height: 12px;
+        border-radius: 1000px;
+    }
+
+    .manual_btn:not(:last-child){
+        margin-right: 30px;
+    }
+
+    .manual_btn .fa-play{
+        font-size: 12px;
+    }
+
+    /* -----Home Hi text-----*/
+    #home h1{
+        font-size: 750%;
+    }
+
+    .arrow i {
+        font-size: 120%;
+    }
+
+    /* ------ about content ----- */
+    #about_content {
+        right: 12%;
+    }
+    #about_content h1{
+        font-size: 400%;
+    }
+    
+    #about_content p{
+        font-size: 110%;
+        line-height: 240%;
+    }
+
+    #about_content p span{
+        font-size: 200%;
+    }
+    /* ----- about quote ----- */
+    .quote {
+        bottom: 1%;
+        padding-top: 0;
+        font-size: 120%;
+        height: auto;
+    }
+}
+/*--------------------------------End Desktop------------------------------------------*/
+
+/*----------------------------Start Tablet (Ipad Air)-----------------------------------*/
+@media (min-width: 451px) and (max-width: 820px){
+    /*--- Burger menu ----*/
+    .toggle{
+        display: initial;
+        top: 30px;
+        right: 30px;
+    }
+
     .toggle .common {
-        position: absolute;
-        height: 2px;
-        width: 20px;
-        background-color: white;
-        border-radius: 50px;
-        transition: 0.3s ease;
+        width: 30px;
     }
-    
-    .toggle .top_line{
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+
+    .toggle .top_line {
+        top: 20%;
     }
-    
-    .toggle .middle_line{
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
+
+    .toggle .bottom_line {
+        top: 80%;
     }
-    
-    .toggle .bottom_line{
-        top: 70%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-    }
-    
+
     input:checked ~ .toggle .top_line {
-        left: 2px;
-        top: 14px;
-        width: 25px;
-        transform: rotate(45deg);
+        width: 30px;
     }
-    
+
     input:checked ~ .toggle .bottom_line {
-        left: 2px;
-        top: 14px;
-        width: 25px;
-        transform: rotate(-45deg);
+        width: 30px;
+    }
+    /*----- Nav bar -----*/
+    
+    .navbar {
+        transform: translateY(-50%) translateX(250px);
+    }
+
+    .navbar ul li .dot {
+        display: 1;
+        
     }
     
-    input:checked ~ .toggle .middle_line {
-        opacity: 0;
+    .navbar ul li .dot span {
+        font-size: 130%;
+        padding: 10px 20px;
+    }
+
+    .navbar ul li:hover .dot span {
+        transform: translateX( -5px);
+    }
+
+    .navbar ul li .dot::before{
+        height: 5px;
+        width: 5px;
+        border: 2px solid #ffffff;
+    }
+
+    .navbar ul li .dot::after{
+        height: 17px;
+        width: 17px;
+        right: -6px;
+        border: 2px solid white;
+    }
+
+    /* ----- Container -----*/
+    .sec {
+        flex-direction: column;
     }
     
-    input:checked ~ .navbar {
-        transform: translateY(-50%) translateX(0);
+    .container video {
+        object-fit: cover;
+    }
+
+    /* -----Home Hi text-----*/
+    #home h1{
+        font-size: 1100%;
+    }
+
+    .arrow i {
+        font-size: 200%;
+    }
+
+    /*----- about -----*/
+    #about {
+        width: 100vw;
+        height: 100vh;
+    }
+    .about_row {
+        flex-direction: column;
+        margin-bottom: 0;
+        height: 100vh;
+    }
+
+    /* ----- about contact ----- */
+    #about_contact {
+        width: 100vw;
+        height: 20%;
+        margin: 0 0 1% 0;
+        position: relative;
+        left: 0;
+        line-height: 0px;
+        padding-top: 1%;
+    }
+    #about_contact ul {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #about_contact ul li {
+        padding: 0 18%;
+    }
+
+    #about_contact ul li a{
+        font-size: 300%;
+    }
+    
+    #about_contact ul li .fa-instagram{
+        font-size: 125%;
+    }
+
+    #about_contact ul li .fa-envelope{
+        font-size: 120%;
+    }
+
+    /* ----- about picture ----- */
+    #about_picture {
+        width: 60vw;
+        height: 44vh;
+        position: relative;
+        left: 0;
+        margin-bottom: 0;
+    }
+
+    .video-container video{
+        width: 100%;
+    }
+
+    .img1 {
+        bottom: 30%;
+    }
+
+    .img2 {
+        bottom: 13%;
+    }
+
+    .img3 {
+        bottom: 20%;
+    }
+
+    .picture_slider {
+        border-radius: 50px;
+    }
+    
+    /* ----- Manual slide ----- */
+    .manual_slide {
+        bottom: -9%;
+        width: 50%;
+    }
+
+    .manual_btn {
+        width: 20px;
+        height: 20px;
+        border-radius: 1000px;
+    }
+
+    .manual_btn .fa-play{
+        position: relative;
+        font-size: 20px;
+    }
+    /* ------ about content ----- */
+    #about_content {
+        text-align: center;
+        position: relative;
+        right: 0;
+        justify-content: start;
+        margin-top: 7%;
+    }
+
+    #about_content h1{
+        font-size: 430%;
+        font-weight: 600;
+        margin-bottom: -2%;
+    }
+
+    #about_content p{
+        font-size: 115%;
+        letter-spacing: 0.5px;
+        line-height: 250%;
+    }
+
+    #about_content p span{
+        font-size: 200%;
+    }
+    /* ----- about quote ----- */
+    .quote {
+        position: relative;
+        bottom: 1%;
+        padding-top: 0;
+        font-size: 150%;
+        height: auto;
+    }
+}
+/*----------------------------------End Tablet----------------------------------*/
+/*----------------------------------Start Mobile--------------------------------*/
+@media (min-width: 0px) and (max-width: 450px){
+    /* ----- Burger menu ----- */
+    .toggle {
+        display: initial;
     }
 
     /*----- Nav bar -----*/
@@ -498,6 +833,19 @@ input {
 
     .navbar ul li:hover .dot span {
         transform: translateX(6px);
+    }
+
+    .navbar ul li .dot::before{
+        height: 5px;
+        width: 5px;
+        border: 2px solid #ffffff;
+    }
+
+    .navbar ul li .dot::after{
+        height: 15px;
+        width: 15px;
+        right: -5px;
+        border: 2px solid white;
     }
 
     /* ----- Container -----*/
@@ -533,6 +881,7 @@ input {
     #about_contact {
         width: 100vw;
         height: 20%;
+        margin-top: 2%;
         margin-bottom: 2%;
         position: relative;
         left: 0;
@@ -550,7 +899,7 @@ input {
     }
 
     #about_contact ul li a{
-        font-size: 200%;
+        font-size: 180%;
     }
     
     #about_contact ul li .fa-instagram{
@@ -558,7 +907,7 @@ input {
     }
 
     #about_contact ul li .fa-envelope{
-        font-size: 120%;
+        font-size: 125%;
     }
 
     /* ----- about picture ----- */
@@ -592,7 +941,7 @@ input {
     
     /* ----- Manual slide ----- */
     .manual_slide {
-        bottom: -8%;
+        bottom: -9%;
         width: 50%;
     }
     /* ------ about content ----- */
@@ -605,15 +954,15 @@ input {
     }
 
     #about_content h1{
-        font-size: 300%;
+        font-size: 270%;
         font-weight: 600;
-        margin-bottom: 0;
+        margin-bottom: -1%;
     }
 
     #about_content p{
-        font-size: 70%;
+        font-size: 65%;
         letter-spacing: 0.5px;
-        line-height: 280%;
+        line-height: 250%;
     }
 
     #about_content p span{
@@ -622,9 +971,11 @@ input {
     /* ----- about quote ----- */
     .quote {
         position: relative;
-        bottom: 0;
+        bottom: 1%;
         padding-top: 0;
-        font-size: 100%;
+        font-size: 90%;
         height: auto;
     }
 }
+/*----------------------------------End Mobile------------------------------------*/
+
